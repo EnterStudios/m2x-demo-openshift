@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+
+set -e
+
+echo "Setting up Ruby demo..."
+gem install m2x
+
+# # Set up loadreport.rb to run every minute
+# chmod 754 /vagrant/loadreport.rb
+# cp /vagrant/loadreport.cron /etc/cron.d/loadreport
+
+# # Keep loadreport.log from getting too large
+# cp /vagrant/loadreport.logrotate /etc/logrotate.d/loadreport
+
+
+
+echo "Setting up Python demo..."
+VIRTUALENV_VERSION="1.11.14"
+VIRTUALENV_URL="https://pypi.python.org/packages/source/v/virtualenv/"
+VIRTUALENV_EXT=".tar.gz"
+
+cd $OPENSHIFT_TMP_DIR
+curl -O ${VIRTUALENV_URL}virtualenv-${VIRTUALENV_VERSION}${VIRTUALENV_EXT}
+cd ${OPENSHIFT_TMP_DIR}virtualenv-${VIRTUALENV_VERSION}
+python virtualenv.py ${OPENSHIFT_DATA_DIR}/virtualenv
+
+
+
+# apt-get -y install python-pip
+# pip install m2x
+
+# # These are needed for our example in particular.
+# pip install ystockquote
+# pip install pyyaml
+
+# chmod 754 /vagrant/stockreport.py
+# cp /vagrant/stockreport.cron /etc/cron.d/stockreport
+# cp /vagrant/stockreport.logrotate /etc/logrotate.d/stockreport
+
+# echo "Done setting up demos."
