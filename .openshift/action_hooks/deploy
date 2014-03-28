@@ -1,7 +1,6 @@
 #!/bin/bash
 
 set -e
-
 echo "Setting up Ruby demo..."
 gem install m2x
 
@@ -19,14 +18,41 @@ VIRTUALENV_VERSION="1.11.4"
 VIRTUALENV_URL="https://pypi.python.org/packages/source/v/virtualenv/"
 VIRTUALENV_EXT=".tar.gz"
 
-cd $OPENSHIFT_DATA_DIR
-curl -O ${VIRTUALENV_URL}virtualenv-${VIRTUALENV_VERSION}${VIRTUALENV_EXT}
-tar xvzf virtualenv-${VIRTUALENV_VERSION}${VIRTUALENV_EXT}
-rm virtualenv-${VIRTUALENV_VERSION}${VIRTUALENV_EXT}
-cd ${OPENSHIFT_TMP_DIR}virtualenv-${VIRTUALENV_VERSION}
-python virtualenv.py ${OPENSHIFT_DATA_DIR}python-prod
+set +e
+if [ -e ${OPENSHIFT_TMP_DIR}virtualenv-${VIRTUALENV_VERSION} ]; then
+    echo "VirtualEnv already installed..."
+else
+    set -e
+    echo "Installing VirtualEnv..."
+    cd $OPENSHIFT_DATA_DIR
+    curl -O ${VIRTUALENV_URL}virtualenv-${VIRTUALENV_VERSION}${VIRTUALENV_EXT}
+    tar xvzf virtualenv-${VIRTUALENV_VERSION}${VIRTUALENV_EXT}
+    rm virtualenv-${VIRTUALENV_VERSION}${VIRTUALENV_EXT}
+    cd ${OPENSHIFT_TMP_DIR}virtualenv-${VIRTUALENV_VERSION}
+    set +e
+fi
 
+if [ -e ${OPENSHIFT_DATA_DIR}python-prod ]; then
+    echo "Python Virtualenv already set up."
+else
+    echo "Setting up Python Virtualenv"
+    python virtualenv.py ${OPENSHIFT_DATA_DIR}python-prod
+fi
+
+set -e
 source ${OPENSHIFT_DATA_DIR}python-prod/bin/activate
 
-pip install m2x
-pip install ystockquote
+set +e
+
+if pip freeze | grep -q m2x ; then
+    echo "m2x already installed"
+else
+    echo "Installing m2x Python"
+    pip install m2x
+fi
+if pip freeze | grep -q ystockquote ; then
+    echo "ystockquote already installed"
+else
+    echo "Installing ystockquote from pip..."
+    pip install ystockquote
+fi
