@@ -19,12 +19,14 @@ VIRTUALENV_VERSION="1.11.4"
 VIRTUALENV_URL="https://pypi.python.org/packages/source/v/virtualenv/"
 VIRTUALENV_EXT=".tar.gz"
 
-cd $OPENSHIFT_TMP_DIR
-echo curl -O ${VIRTUALENV_URL}virtualenv-${VIRTUALENV_VERSION}${VIRTUALENV_EXT}
+cd $OPENSHIFT_DATA_DIR
 curl -O ${VIRTUALENV_URL}virtualenv-${VIRTUALENV_VERSION}${VIRTUALENV_EXT}
 tar xvzf virtualenv-${VIRTUALENV_VERSION}${VIRTUALENV_EXT}
+rm virtualenv-${VIRTUALENV_VERSION}${VIRTUALENV_EXT}
 cd ${OPENSHIFT_TMP_DIR}virtualenv-${VIRTUALENV_VERSION}
-python virtualenv.py ${OPENSHIFT_DATA_DIR}virtualenv
+python virtualenv.py ${OPENSHIFT_DATA_DIR}python-prod
+
+
 
 
 
