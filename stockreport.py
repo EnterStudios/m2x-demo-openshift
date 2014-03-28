@@ -1,8 +1,7 @@
 #!/usr/bin/env python
 
+import os
 import time
-
-
 
 import datetime
 
@@ -15,7 +14,7 @@ print("%s: Starting stockreport.py run" % time.strftime(TIMEFORMAT))
 
 
 # Load config
-APIKEY = open('/vagrant/m2x_api_key.yaml').read().strip()
+APIKEY = open(os.environ['M2XKEYFILE']).read().strip()
 now = datetime.datetime.now()
 ATT_Stock_Price = ystockquote.get_price('T')
 

@@ -2,4 +2,6 @@
 
 source ${OPENSHIFT_DATA_DIR}python-prod/bin/activate
 
-python ${OPENSHIFT_REPO_DIR}stockreport.py >>  ${OPENSHIFT_RUBY_LOG_DIR}stockreport.log
+export M2XKEYFILE=${OPENSHIFT_REPO_DIR}m2x_api_key.txt
+
+python ${OPENSHIFT_REPO_DIR}stockreport.py >> ${OPENSHIFT_RUBY_LOG_DIR}stockreport.log
