@@ -21,6 +21,7 @@ VIRTUALENV_EXT=".tar.gz"
 
 cd $OPENSHIFT_TMP_DIR
 curl -O ${VIRTUALENV_URL}virtualenv-${VIRTUALENV_VERSION}${VIRTUALENV_EXT}
+tar xvzf virtualenv-${VIRTUALENV_VERSION}${VIRTUALENV_EXT}
 cd ${OPENSHIFT_TMP_DIR}virtualenv-${VIRTUALENV_VERSION}
 python virtualenv.py ${OPENSHIFT_DATA_DIR}/virtualenv
 
