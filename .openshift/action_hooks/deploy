@@ -26,19 +26,7 @@ rm virtualenv-${VIRTUALENV_VERSION}${VIRTUALENV_EXT}
 cd ${OPENSHIFT_TMP_DIR}virtualenv-${VIRTUALENV_VERSION}
 python virtualenv.py ${OPENSHIFT_DATA_DIR}python-prod
 
+source ${OPENSHIFT_DATA_DIR}python-prod/bin/activate
 
-
-
-
-# apt-get -y install python-pip
-# pip install m2x
-
-# # These are needed for our example in particular.
-# pip install ystockquote
-# pip install pyyaml
-
-# chmod 754 /vagrant/stockreport.py
-# cp /vagrant/stockreport.cron /etc/cron.d/stockreport
-# cp /vagrant/stockreport.logrotate /etc/logrotate.d/stockreport
-
-# echo "Done setting up demos."
+pip install m2x
+pip install ystockquote
