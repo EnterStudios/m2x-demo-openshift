@@ -2,7 +2,14 @@
 
 set -e
 echo "Setting up Ruby demo..."
-gem install m2x
+
+if gem list | grep -q m2x ; then
+    echo "m2x gem already installed. Updating..."
+    gem update m2x
+else
+    echo "Installing m2x gem..."
+    gem install m2x
+fi
 
 # # Set up loadreport.rb to run every minute
 # chmod 754 /vagrant/loadreport.rb
