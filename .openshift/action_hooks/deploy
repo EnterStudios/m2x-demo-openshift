@@ -24,7 +24,9 @@ echo curl -O ${VIRTUALENV_URL}virtualenv-${VIRTUALENV_VERSION}${VIRTUALENV_EXT}
 curl -O ${VIRTUALENV_URL}virtualenv-${VIRTUALENV_VERSION}${VIRTUALENV_EXT}
 tar xvzf virtualenv-${VIRTUALENV_VERSION}${VIRTUALENV_EXT}
 cd ${OPENSHIFT_TMP_DIR}virtualenv-${VIRTUALENV_VERSION}
-python virtualenv.py ${OPENSHIFT_DATA_DIR}/virtualenv
+python virtualenv.py ${OPENSHIFT_DATA_DIR}virtualenv
+
+
 
 # apt-get -y install python-pip
 # pip install m2x
