@@ -42,7 +42,7 @@ if [ -e ${OPENSHIFT_DATA_DIR}python-prod ]; then
     echo "Python Virtualenv already set up."
 else
     echo "Setting up Python Virtualenv"
-    python virtualenv.py ${OPENSHIFT_DATA_DIR}python-prod
+    python ${OPENSHIFT_DATA_DIR}virtualenv-${VIRTUALENV_VERSION}/virtualenv.py ${OPENSHIFT_DATA_DIR}python-prod
 fi
 
 set -e
