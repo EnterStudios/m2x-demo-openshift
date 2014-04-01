@@ -11,15 +11,6 @@ else
     gem install m2x
 fi
 
-# # Set up loadreport.rb to run every minute
-# chmod 754 /vagrant/loadreport.rb
-# cp /vagrant/loadreport.cron /etc/cron.d/loadreport
-
-# # Keep loadreport.log from getting too large
-# cp /vagrant/loadreport.logrotate /etc/logrotate.d/loadreport
-
-
-
 echo "Setting up Python demo..."
 VIRTUALENV_VERSION="1.11.4"
 VIRTUALENV_URL="https://pypi.python.org/packages/source/v/virtualenv/"
