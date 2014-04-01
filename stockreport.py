@@ -14,7 +14,7 @@ print("%s: Starting stockreport.py run" % time.strftime(TIMEFORMAT))
 
 
 # Load config
-APIKEY = open(os.environ['M2XKEYFILE']).read().strip()
+APIKEY = open(os.environ['OPENSHIFT_REPO_DIR'] + 'm2x_api_key.txt').read().strip()
 now = datetime.datetime.now()
 ATT_Stock_Price = ystockquote.get_price('T')
 
