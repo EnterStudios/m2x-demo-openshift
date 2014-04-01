@@ -1,4 +1,4 @@
 #!/bin/bash
 
-cd $OPENSHIFT_REPO_DIR
-logrotate $OPENSHIFT_REPO_DIR/logrotate.conf
+cd $OPENSHIFT_RUBY_LOG_DIR
+logrotate $OPENSHIFT_REPO_DIR/logrotate.conf -s $OPENSHIFT_DATA_DIR/logrotate.status
