@@ -26,7 +26,10 @@ You will need [rhc](https://www.openshift.com/developers/rhc-client-tools-instal
 ### Creating and Uploading your Application
 
 ```
-rhc app create APPNAME ruby-1.9 cron-1.4 --from-code https://github.com/attm2x/m2x-demo-openshift.git
+rhc app create APPNAME ruby-1.9 cron-1.4
+cd APPNAME
+git remote add github -f https://github.com/attm2x/m2x-demo-openshift.git
+git merge github/master -s recursive -X theirs
 ```
 ### M2X API Key
 
