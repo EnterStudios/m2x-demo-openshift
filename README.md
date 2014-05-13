@@ -48,14 +48,14 @@ git push origin master
 
 You should now be sending data on 1-minute, 5-minute, and 15-minute load averages from your OpenShift application to AT&T M2X. It should be updating every minute, and if you refresh your AT&T M2X "loadreport-openshift" Blueprint page, you should be able to click each load average and see graphs showing your load averages over time.
 
-If not, you can look at loadreport.log in the $OPENSHIFT_RUBY_LOG_DIR, which records any errors in sending the data to M2X. You can also SSH to the OpenShift gear with the ```rhc ssh``` command to run standard Linux/Unix troubleshooting commands.
+If not, you can look at loadreport.log in the $OPENSHIFT_LOG_DIR, which records any errors in sending the data to M2X. You can also SSH to the OpenShift gear with the ```rhc ssh``` command to run standard Linux/Unix troubleshooting commands.
 
 
 ## Python Demo
 
 Your stockreport.py should now be reporting the price of AT&T's stock to AT&T M2X every minute. (Please note that the NYSE is open from 9:30 AM to 4 PM Eastern Time, and the stock price reported outside those hours will not change.)
 
-If there are any errors from stockreport.py, they will be logged in stockreport.log in your $OPENSHIFT_RUBY_LOG_DIR directory, or you can ```rhc ssh``` to the OpenShift gear for troubleshooting.
+If there are any errors from stockreport.py, they will be logged in stockreport.log in your $OPENSHIFT_LOG_DIR directory, or you can ```rhc ssh``` to the OpenShift gear for troubleshooting.
 
 ## License
 
