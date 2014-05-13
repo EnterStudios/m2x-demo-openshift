@@ -1,4 +1,4 @@
 #!/bin/bash
 
 export TZ="/usr/share/zoneinfo/UTC"
-ruby ${OPENSHIFT_REPO_DIR}loadreport.rb >> ${OPENSHIFT_RUBY_LOG_DIR}loadreport.log
+ruby ${OPENSHIFT_REPO_DIR}loadreport.rb >> ${OPENSHIFT_LOG_DIR}loadreport.log
