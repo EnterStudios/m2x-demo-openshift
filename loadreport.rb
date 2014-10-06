@@ -7,7 +7,7 @@ BPNAME = "loadreport-openshift"
 
 puts Time.now.strftime(TIMEFORMAT) + ": Starting loadreport.rb run"
 
-APIKEY = File.read(ENV['OPENSHIFT_REPO_DIR'] + 'm2x_api_key.txt').strip
+APIKEY = ENV['M2X_API_KEY']
 
 m2x = M2X.new(APIKEY)
 
