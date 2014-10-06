@@ -26,21 +26,16 @@ You will need [rhc](https://www.openshift.com/developers/rhc-client-tools-instal
 ### Creating and Uploading your Application
 
 ```
-rhc app create m2xdemo ruby-1.9 cron-1.4
-cd m2xdemo
-git remote add github -f https://github.com/attm2x/m2x-demo-openshift.git
-git merge github/master -s recursive -X theirs
+rhc app-create m2xdemo ruby-1.9 cron-1.4 --from-code=https://github.com/attm2x/m2x-demo-openshift.git
 ```
 ### M2X API Key
 
-Next you'll need to get your M2X API Master Key. Log into M2X, and click your name in the upper right-hand corner, then the "Account Settings" dropdown, then the "Master Keys" tab. [Here's a direct link](https://m2x.att.com/account#master-keys-tab). Copy the Master Key and paste it into the m2x_api_key.txt file. It's just the API key, by itself, in a text file.
+Next you'll need to get your M2X API Master Key. Log into M2X, and click your name in the upper right-hand corner, then the "Account Settings" dropdown, then the "Master Keys" tab. [Here's a direct link](https://m2x.att.com/account#master-keys-tab).
 
 Then you'll need to send those changes to OpenShift:
 
 ```
-git add m2x_api_key.txt
-git commit -m "Updating to use my correct API key."
-git push origin master
+rhc env set M2X_API_KEY=long-string-of-master-key-here
 ```
 
 
