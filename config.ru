@@ -225,10 +225,18 @@ pre {
 
 <section class='container'>
           <hgroup>
-            <h1>Welcome to your Ruby application on OpenShift</h1>
+            <h1>Welcome to your M2X Demo Application</h1>
           </hgroup>
 
+        <div class="row">
+          <section class="col-xs-12 col-sm-12 col-md-12">
+            <section>
+              You should now be sending data on 1-minute, 5-minute, and 15-minute load averages from your OpenShift application to <a href="https://m2x.att.com">AT&T M2X</a>. It should be updating every minute, and if you refresh your AT&T M2X "loadreport-openshift" Blueprint page, you should be able to click each load average and see graphs showing your load averages over time.
 
+              If not, you can look at loadreport.log in the $OPENSHIFT_LOG_DIR, which records any errors in sending the data to M2X. You can also SSH to the OpenShift gear with the rhc ssh command to run standard Linux/Unix troubleshooting commands
+            </section>
+          </section>
+        </div>
         <div class="row">
           <section class='col-xs-12 col-sm-6 col-md-6'>
             <section>
@@ -275,6 +283,8 @@ $ git push</pre>
                     <li><a href="http://stackoverflow.com/questions/tagged/openshift">Stack Overflow questions for OpenShift</a></li>
                     <li><a href="http://webchat.freenode.net/?randomnick=1&channels=openshift&uio=d4">IRC channel at #openshift on freenode.net</a></li>
                     <li><a href="http://git-scm.com/documentation">Git documentation</a></li>
+                    <li><a href="https://m2x.att.com/developer/documentation">M2X API Documentation</a></li>
+                    <li><a href="https://github.com/attm2x/m2x-ruby">AT&T M2X Ruby Client on GitHub</a>
                   </ul>
 
 
