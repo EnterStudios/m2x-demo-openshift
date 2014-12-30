@@ -231,7 +231,7 @@ pre {
         <div class="row">
           <section class="col-xs-12 col-sm-12 col-md-12">
             <section>
-              You should now be sending data on 1-minute, 5-minute, and 15-minute load averages from your OpenShift application to <a href="https://m2x.att.com">AT&T M2X</a>. It should be updating every minute, and if you refresh your AT&T M2X "loadreport-openshift" Blueprint page, you should be able to click each load average and see graphs showing your load averages over time.
+              You should now be sending data on 1-minute, 5-minute, and 15-minute load averages from your OpenShift application to <a href="https://m2x.att.com">AT&T M2X</a>. It should be updating every minute, and if you refresh your AT&T M2X "loadreport-openshift" Device page, you should be able to click each load average and see graphs showing your load averages over time.
 
               If not, you can look at loadreport.log in the $OPENSHIFT_LOG_DIR, which records any errors in sending the data to M2X. You can also SSH to the OpenShift gear with the rhc ssh command to run standard Linux/Unix troubleshooting commands
             </section>

@@ -41,7 +41,7 @@ rhc env set M2X_API_KEY=long-string-of-master-key-here
 
 ## Ruby Demo
 
-You should now be sending data on 1-minute, 5-minute, and 15-minute load averages from your OpenShift application to AT&T M2X. It should be updating every minute, and if you refresh your AT&T M2X "loadreport-openshift" Blueprint page, you should be able to click each load average and see graphs showing your load averages over time.
+You should now be sending data on 1-minute, 5-minute, and 15-minute load averages from your OpenShift application to AT&T M2X. It should be updating every minute, and if you refresh your AT&T M2X "loadreport-openshift" Device page, you should be able to click each load average and see graphs showing your load averages over time.
 
 If not, you can look at loadreport.log in the $OPENSHIFT_LOG_DIR, which records any errors in sending the data to M2X. You can also SSH to the OpenShift gear with the ```rhc ssh``` command to run standard Linux/Unix troubleshooting commands.
 
