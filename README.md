@@ -17,7 +17,7 @@ Please note that the virtual machine and M2X are using times in UTC, not in your
 
 You will need to have an account on [RedHat OpenShift](https://www.openshift.com/). You will need to have enough quota to create an additional application. (On the free tier, you can create up to three applications.)
 
-You will also need an account on AT&amp;T's M2X service ([m2x.att.com](https://m2x.att.com)), which is currently free to everyone. (Future plans call for M2X to keep a free "Developer" plan, but to charge for very large volumes of data.)
+You will also need an [account on AT&T's M2X service](https://m2x.att.com/signup), which has a free Developer plan and usage based paid plans for higher volumes of data. Check out the [M2X Pricing](https://m2x.att.com/pricing) page for more details.
 
 You will need [rhc](https://www.openshift.com/developers/rhc-client-tools-install) installed and configured with your OpenShift login credentials.
 
