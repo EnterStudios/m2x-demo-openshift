@@ -3,4 +3,4 @@
 export TZ="/usr/share/zoneinfo/UTC"
 source ${OPENSHIFT_DATA_DIR}python-prod/bin/activate
 python ${OPENSHIFT_REPO_DIR}stockreport.py >> ${OPENSHIFT_LOG_DIR}stockreport.log
- 
+
