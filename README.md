@@ -1,9 +1,8 @@
 # M2X OpenShift Demo
 
-
 ## Introduction
 
-This repo provides a QuickStart for an OpenShift application that contains several demo applications that report data to AT&T M2X:
+This repo provides a QuickStart for a [RedHat OpenShift](https://www.openshift.com/) application that contains several demo applications that report data to [AT&T M2X](https://m2x.att.com/):
 
 * A Ruby application that reports the system load (on 1-minute, 5-minute, and 15-minute averages, as reported by uptime) to M2X every minute.
 * A Python application that reports the current stock price of AT&T's stock (ticker symbol "T") every minute.
@@ -12,6 +11,7 @@ All the steps required to set up all demos are in ```.openshift/action_hooks/dep
 
 Please note that the virtual machine and M2X are using times in UTC, not in your local time zone.
 
+You can also find additional information at the [OpenShift Quickstart for M2X](https://hub.openshift.com/quickstarts/141-at-t-m2x)
 
 ## Pre-Requisites
 
